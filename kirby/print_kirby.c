@@ -1,3 +1,7 @@
+/*
+** Need un ptit makefile
+** Et d'autres "oeuvres"
+*/
 #include "libft.h"
 
 void	ft_putcharcolor(char c, char *color)
@@ -53,13 +57,13 @@ void	trace_kirby()
 	ft_putcharcolor(' ', WHITE_BK_RED_FG);
 	ft_putchar('\n');
 	//ligne 6
-	ft_putstr("   ");
+	ft_putstr("  ");
 	ft_putcharcolor(' ', WHITE_BK_RED_FG);
 	ft_putstrcolor("        ", MAGENTA_BK_WHITE_FG);
 	ft_putcharcolor(' ', WHITE_BK_RED_FG);
 	ft_putcharcolor(' ', MAGENTA_BK_WHITE_FG);
 	ft_putcharcolor(' ', WHITE_BK_RED_FG);
-	ft_putstrcolor("  ", MAGENTA_BK_WHITE_FG);
+	ft_putstrcolor("   ", MAGENTA_BK_WHITE_FG);
 	ft_putcharcolor(' ', RED_BK_WHITE_FG);
 	ft_putcharcolor(' ', WHITE_BK_RED_FG);
 	ft_putchar('\n');
@@ -163,8 +167,25 @@ void	trace_kirby()
 
 }
 
-int		main()
+
+void	trace_dubloadz()
 {
-	trace_kirby();
+	ft_putstrcolor("En cours de construction.\n", RED);
+	return ;
+}
+
+int		main(int ac, char **av)
+{
+	if (ac != 2)
+	{
+		ft_putstrcolor("usage : ./a.out nb\n Where nb is :\n 1 = Kirby\n 2 = Dubloadz\n ", CYAN);
+		return (0);
+	}
+	if (ft_strchr(av[1], '1') != NULL)
+		trace_kirby();
+	else if (ft_strchr(av[1], '2') != NULL && ft_strlen(av[1]) == 1)
+		trace_dubloadz();
+	else
+		ft_putstrcolor("usage : ./Draw nb\nWhere nb is :\n1 = Kirby\n2 = Dubloadz", CYAN);
 	return (0);
 }
