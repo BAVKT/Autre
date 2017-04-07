@@ -6,7 +6,7 @@
 /*   By: vmercadi <vmercadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:31:30 by vmercadi          #+#    #+#             */
-/*   Updated: 2017/03/23 17:22:08 by vmercadi         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:19:59 by vmercadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // Compilation : compil rot.c libft.a
@@ -82,11 +82,11 @@ int 	main(int ac, char **av)
 		ft_putstrcolor("Exemple : a.out 0 test.txt 32 127", YELLOW);
 		return (0);
 	}
-	i = 32;
 	nb = ft_atoi(av[1]);
 	start = ft_atoi(av[3]);
 	end = ft_atoi(av[4]);
 	s = file_to_str(av[2]);
+	i = start;
 	if (nb == 0)
 	{
 		while (i < end) 				//On fait toute la table ascii depuis espace
